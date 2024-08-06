@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zeke Emej's Website</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f0f0f0;
+        }
+        .container {
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+        h1, h2 {
+            color: #333333;
+        }
+        p {
+            color: #666666;
+        }
+        .dynamic {
+            color: #007BFF;
+        }
+        .editable {
+            cursor: pointer;
+            border-bottom: 1px dashed #007BFF;
+        }
+    </style>
+</head>
+<body>
+    <div class="container text-center">
+        <h1>Welcome to Zeke Emej's Website</h1>
+        <p class="editable" id="education">I am in 9th grade.</p>
+        <p class="editable" id="curiosity">I am curious to learn new things.</p>
+        <p class="editable" id="interests">I like technologies.</p>
+    </div>
+
+    <div class="container">
+        <h2>About Me</h2>
+        <p class="editable" id="about">Write something about yourself here.</p>
+    </div>
+
+    <div class="container">
+        <h2>Projects</h2>
+        <div class="project">
+            <h3 class="editable" id="project1-title">Project 1 Title</h3>
+            <p class="editable" id="project1-description">Description of Project 1.</p>
+        </div>
+        <div class="project">
+            <h3 class="editable" id="project2-title">Project 2 Title</h3>
+            <p class="editable" id="project2-description">Description of Project 2.</p>
+        </div>
+        <!-- Add more projects as needed -->
+    </div>
+
+    <div class="container">
+        <h2>Contact</h2>
+        <p class="editable" id="contact-info">Your contact information here.</p>
+    </div>
+
+    <!-- jQuery and Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.editable').on('click', function(){
+                let currentText = $(this).text();
+                let newText = prompt('Edit the text:', currentText);
+                if (newText !== null && newText.trim() !== '') {
+                    $(this).text(newText);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
