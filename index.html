@@ -8,37 +8,70 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
-            background-color: #f0f0f0;
+            background-color: #121212;
+            color: #ffffff;
         }
         .container {
-            background-color: #ffffff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #1e1e1e;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
             border-radius: 8px;
             padding: 20px;
             margin-top: 30px;
             margin-bottom: 30px;
         }
         h1, h2 {
-            color: #333333;
+            color: #ffffff;
         }
         p {
-            color: #666666;
-        }
-        .dynamic {
-            color: #007BFF;
+            color: #bbbbbb;
         }
         .editable {
             cursor: pointer;
             border-bottom: 1px dashed #007BFF;
         }
+        .btn-custom {
+            background-color: #007BFF;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 16px;
+        }
+        .card {
+            background-color: #2a2a2a;
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            margin: 20px 0;
+        }
+        .card h3 {
+            color: #ffffff;
+        }
+        .card p {
+            color: #cccccc;
+        }
+        .animated-bg {
+            animation: colorChange 5s infinite alternate;
+        }
+        @keyframes colorChange {
+            0% { background-color: #007BFF; }
+            50% { background-color: #00A1FF; }
+            100% { background-color: #007BFF; }
+        }
     </style>
 </head>
 <body>
     <div class="container text-center">
-        <h1>Welcome to Zeke Emej's Website</h1>
+        <h1 class="animated-bg">Welcome to Zeke Emej's Website</h1>
         <p class="editable" id="education">I am in 9th grade.</p>
         <p class="editable" id="curiosity">I am curious to learn new things.</p>
         <p class="editable" id="interests">I like technologies.</p>
+        <button class="btn-custom" onclick="alert('Hello, Zeke!')">Click Me</button>
     </div>
 
     <div class="container">
@@ -48,13 +81,17 @@
 
     <div class="container">
         <h2>Projects</h2>
-        <div class="project">
-            <h3 class="editable" id="project1-title">Project 1 Title</h3>
-            <p class="editable" id="project1-description">Description of Project 1.</p>
+        <div class="card">
+            <div class="card-body">
+                <h3 class="card-title editable" id="project1-title">Project 1 Title</h3>
+                <p class="card-text editable" id="project1-description">Description of Project 1.</p>
+            </div>
         </div>
-        <div class="project">
-            <h3 class="editable" id="project2-title">Project 2 Title</h3>
-            <p class="editable" id="project2-description">Description of Project 2.</p>
+        <div class="card">
+            <div class="card-body">
+                <h3 class="card-title editable" id="project2-title">Project 2 Title</h3>
+                <p class="card-text editable" id="project2-description">Description of Project 2.</p>
+            </div>
         </div>
         <!-- Add more projects as needed -->
     </div>
